@@ -1,23 +1,37 @@
 <template>
   <div>
- 
-     <span>222</span> 
- 
+
+    <group>
+      <x-input title="用户名：" v-model="name"></x-input>
+      <x-input title="密 码：" v-model="password"></x-input>
+      <x-button type="primary" action-type="button">登陆</x-button>
+    </group>
+
   </div>
 </template>
 <style>
 
+
 </style>
 <script>
-
-  export default{
-    data(){
+  import {
+    Group,
+    XInput,
+    XButton
+  } from 'vux'
+  export default {
+    data() {
       return {
-        msg: 'dzh'
+        name: '',
+        password: ''
+
       }
     },
     components: {
- 
+      Group,
+      XInput,
+      XButton
     }
   }
+
 </script>
