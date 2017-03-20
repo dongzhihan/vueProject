@@ -6,18 +6,13 @@ import VueRouter from 'vue-router'
 import App from './App'
 import Home from './components/HelloFromVux'
 import ElementUI from 'element-ui'
+import router from './router/index.js'
 import 'element-ui/lib/theme-default/index.css'
+import 'lib-flexible'
 Vue.use(ElementUI)
 Vue.use(VueRouter)
  
-const routes = [{
-  path: '/',
-  component: Home
-}]
-
-const router = new VueRouter({
-  routes
-})
+ 
 
 FastClick.attach(document.body)
 
