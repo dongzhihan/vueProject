@@ -12,7 +12,7 @@ import 'lib-flexible'
 Vue.use(ElementUI)
 Vue.use(VueRouter)
  
- 
+ console.log(ElementUI)
 
 FastClick.attach(document.body)
 

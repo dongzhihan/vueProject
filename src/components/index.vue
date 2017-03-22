@@ -1,22 +1,26 @@
 <template>
   <div>
              <router-view ></router-view>
-           <tabbar>
-      <tabbar-item  >
- 
-        <span  slot="label">Wechat</span>
+    <tabbar>
+      <tabbar-item link="/index/storage">
+
+        <span slot="label" >入库</span>
       </tabbar-item>
-      <tabbar-item show-dot>
- 
-        <span slot="label">Message</span>
+      <tabbar-item link="/index/finishedGoodsDelivery">
+
+        <span slot="label" >成品发货</span>
       </tabbar-item>
-      <tabbar-item  link="/name">
- 
-        <span slot="label">Explore</span>
+      <tabbar-item link="/index/productionInput">
+
+        <span slot="label" >生产订单</span>
       </tabbar-item>
-      <tabbar-item badge="2">
- 
-        <span slot="label">News</span>
+      <tabbar-item link="/index/productionOutput">
+
+        <span slot="label" >生产投入</span>
+      </tabbar-item>
+      <tabbar-item link="/index/productionOrder">
+
+        <span slot="label" >生产产出</span>
       </tabbar-item>
     </tabbar>
 
@@ -27,15 +31,19 @@
 
 </style>
 <script>
-import { Tabbar, TabbarItem } from 'vux'
+  import {
+    Tabbar,
+    TabbarItem
+  } from 'vux'
   export default {
     data() {
       return {
-  
+
       }
     },
     components: {
-         Tabbar,TabbarItem
+      Tabbar,
+      TabbarItem
     }
   }
 
