@@ -9,9 +9,11 @@ import ElementUI from 'element-ui'
 import router from './router/index.js'
 import 'element-ui/lib/theme-default/index.css'
 import 'lib-flexible'
+import MintUI from 'mint-ui'
+import 'mint-ui/lib/style.css'
 Vue.use(ElementUI)
 Vue.use(VueRouter)
- 
+ Vue.use(MintUI)
  console.log(ElementUI)
 
 FastClick.attach(document.body)

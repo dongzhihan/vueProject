@@ -36,7 +36,6 @@
     methods: {
       loginClick()
       {
-        console.log(1)
         this.$router.push('/index')
       }
     }

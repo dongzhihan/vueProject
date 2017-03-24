@@ -1,19 +1,20 @@
 <template>
   <div>
- 
-    <group>
 
-      <x-input title="二维码" @keyup.enter.native=" test()"></x-input>
- 
-      <x-input title="计划日期"></x-input>
-      <x-input title="开始日期"></x-input>
-      <x-input title="到期日"></x-input>
-      <x-input title="计划数量"></x-input>
-      <x-input title="件名"></x-input>
-      <x-input title="件号"></x-input>
-       <x-input title="加工中心"></x-input>
+    <group>
+      <mt-field label="二维码" @keyup.enter.native=" test()"></mt-field>
+      <mt-field label="计划日期"></mt-field>
+      <mt-field label="开始日期"></mt-field>
+      <mt-field label="到期日"></mt-field>
+      <mt-field label="计划数量"></mt-field>
+      <mt-field label="件名"></mt-field>
+      <mt-field label="件号"></mt-field>
+      <mt-field label="加工中心"></mt-field>
+
+
+
     </group>
-          <x-button type="primary" action-type="button">提交</x-button>
+    <x-button type="primary" action-type="button">提交</x-button>
   </div>
 
 

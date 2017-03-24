@@ -1,17 +1,18 @@
 <template>
   <div>
- 
+
     <group>
 
-      <x-input title="生产订单" @keyup.enter.native=" test()"></x-input>
- 
-      <x-input title="二维码"></x-input>
-      <x-input title="投入数"></x-input>
-      <x-input title="已投入数"></x-input>
-      <x-input title="品号"></x-input>
-      <x-input title="品名"></x-input>
+
+      <mt-field label="二维码"></mt-field>
+      <mt-field label="投入数"></mt-field>
+
+      <mt-field label="已投入数"></mt-field>
+      <mt-field label="品号"></mt-field>
+      <mt-field label="品名"></mt-field>
+
     </group>
-          <x-button type="primary" action-type="button">提交</x-button>
+    <x-button type="primary" action-type="button">提交</x-button>
   </div>
 
 

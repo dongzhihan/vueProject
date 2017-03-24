@@ -3,9 +3,9 @@
 
     <group>
 
-      <x-input title="验收单号"></x-input>
-      <x-input title="采购单号"></x-input>
-      <x-input title="厂商"></x-input>
+      <mt-field label="验收单号"></mt-field>
+      <mt-field label="采购单号"></mt-field>
+      <mt-field label="厂商"></mt-field>
     </group>
     <el-table :data="tableData" style="width: 100%">
       <el-table-column width="50" prop="date" label="序号">
@@ -16,7 +16,7 @@
       </el-table-column>
       <el-table-column prop="address" label="单位">
       </el-table-column>
-      <el-table-column   prop="address" label="交货量">
+      <el-table-column prop="address" label="交货量">
       </el-table-column>
     </el-table>
     <x-button type="primary" action-type="button">提交</x-button>
@@ -51,6 +51,6 @@
 
 </script>
 <style scoped>
- 
+
 
 </style>

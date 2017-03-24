@@ -1,26 +1,30 @@
 <template>
   <div>
-             <router-view ></router-view>
+    <router-view></router-view>
     <tabbar>
+      <tabbar-item link="/index/allocation">
+
+        <span slot="label">调拨</span>
+      </tabbar-item>
       <tabbar-item link="/index/storage">
 
-        <span slot="label" >入库</span>
+        <span slot="label">入库</span>
       </tabbar-item>
       <tabbar-item link="/index/finishedGoodsDelivery">
 
-        <span slot="label" >成品发货</span>
+        <span slot="label">成品发货</span>
       </tabbar-item>
       <tabbar-item link="/index/productionInput">
 
-        <span slot="label" >生产订单</span>
+        <span slot="label">生产订单</span>
       </tabbar-item>
       <tabbar-item link="/index/productionOutput">
 
-        <span slot="label" >生产投入</span>
+        <span slot="label">生产投入</span>
       </tabbar-item>
       <tabbar-item link="/index/productionOrder">
 
-        <span slot="label" >生产产出</span>
+        <span slot="label">生产产出</span>
       </tabbar-item>
     </tabbar>
 

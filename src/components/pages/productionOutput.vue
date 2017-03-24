@@ -3,24 +3,24 @@
 
     <group>
 
-      <x-input title="生产订单"  ></x-input>
-      <x-input title="二维码" ></x-input>
-      <x-input title="品号" ></x-input>
-            <x-input title="品名" ></x-input>
-              <x-input title="订单数量" ></x-input>
+      <mt-field label="生产订单"></mt-field>
+      <mt-field label="二维码"></mt-field>
+      <mt-field label="品号"></mt-field>
+      <mt-field label="品名"></mt-field>
+      <mt-field label="订单数量"></mt-field>
     </group>
-           <el-table :data="tableData" style="width: 100%">
+    <el-table :data="tableData" style="width: 100%">
       <el-table-column prop="date" label="序号">
       </el-table-column>
       <el-table-column prop="name" label="产出时间">
       </el-table-column>
-       <el-table-column prop="address" label="数量">
+      <el-table-column prop="address" label="数量">
       </el-table-column>
-    </el-table>  
-      <x-button type="primary" action-type="button">入库</x-button>
+    </el-table>
+    <x-button type="primary" action-type="button">入库</x-button>
   </div>
-   
- 
+
+
 </template>
 <style>
 

@@ -1,12 +1,12 @@
 <template>
   <div>
-
+ <mt-header fixed title="调拨"></mt-header>
     <group>
-
-      <x-input title="出货时间"  ></x-input>
-      <x-input title="出货地" ></x-input>
-      <x-input title="件号" ></x-input>
-            <x-input title="数量" ></x-input>
+<mt-field label="出货时间"  ></mt-field>
+<mt-field label="出货地"  ></mt-field>
+<mt-field label="件号"  ></mt-field>
+<mt-field label="数量"  ></mt-field>
+ 
     </group>
            <el-table :data="tableData" style="width: 100%">
       <el-table-column   prop="date" label="序号">

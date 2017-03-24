@@ -7,6 +7,7 @@ import productionInput from '@/components/pages/productionInput.vue'
 import productionOrder from '@/components/pages/productionOrder.vue'
 import productionOutput from '@/components/pages/productionOutput.vue'
 import finishedGoodsDelivery from '@/components/pages/finishedGoodsDelivery.vue'
+import allocation from '@/components/pages/allocation.vue'
 Vue.use(Router)
 
 export default new Router({
@@ -22,7 +23,8 @@ export default new Router({
            { path: '/index/productionInput', name: 'indexProductionInput', component: productionInput },
            { path: '/index/productionOrder', name: 'indexProductionOrder', component: productionOrder },
            { path: '/index/productionOutput', name: 'indexProductionOutput', component: productionOutput },
-           { path: '/index/finishedGoodsDelivery', name: 'indexFinishedGoodsDelivery', component: finishedGoodsDelivery }
+           { path: '/index/finishedGoodsDelivery', name: 'indexFinishedGoodsDelivery', component: finishedGoodsDelivery },
+           { path: '/index/allocation', name: 'allocation', component: allocation }
       ]
     },
      { path: '/productionInput', name: '123', component: productionInput }
