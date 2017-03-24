@@ -11,6 +11,9 @@ import 'element-ui/lib/theme-default/index.css'
 import 'lib-flexible'
 import MintUI from 'mint-ui'
 import 'mint-ui/lib/style.css'
+import api from  './js/api.js'
+
+ console.log(api)
 Vue.use(ElementUI)
 Vue.use(VueRouter)
  Vue.use(MintUI)

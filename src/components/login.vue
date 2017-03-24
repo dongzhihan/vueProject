@@ -19,6 +19,7 @@
     XInput,
     XButton
   } from 'vux'
+  
   export default {
     data() {
       return {

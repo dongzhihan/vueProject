@@ -1,6 +1,6 @@
 <template>
   <div>
-
+  <div style="width: 100%;height: 1.5rem;font-size:1rem;display: flex;justify-content: center;align-items: center "> 生产产出 </div>
     <group>
 
 
@@ -12,7 +12,7 @@
       <mt-field label="品名"></mt-field>
 
     </group>
-    <x-button type="primary" action-type="button">提交</x-button>
+    <x-button style="margin-top: 10px" type="primary" action-type="button">提交</x-button>
   </div>
 
 
@@ -31,7 +31,8 @@
     data() {
       return {
         name: '',
-        password: ''
+        password: '',
+        tableData: [],
 
       }
     },

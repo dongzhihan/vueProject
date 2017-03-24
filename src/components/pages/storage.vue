@@ -1,6 +1,6 @@
 <template>
   <div>
-
+  <div style="width: 100%;height: 1.5rem;font-size:1rem;display: flex;justify-content: center;align-items: center "> 入库 </div>
     <group>
 
       <mt-field label="验收单号"></mt-field>
@@ -19,7 +19,7 @@
       <el-table-column prop="address" label="交货量">
       </el-table-column>
     </el-table>
-    <x-button type="primary" action-type="button">提交</x-button>
+    <x-button style="margin-top: 10px" type="primary" action-type="button">提交</x-button>
   </div>
 
 

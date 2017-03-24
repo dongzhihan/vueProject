@@ -1,6 +1,6 @@
 <template>
   <div>
-
+  <div style="width: 100%;height: 1.5rem;font-size:1rem;display: flex;justify-content: center;align-items: center "> 生产投入 </div>
     <group>
 
       <mt-field label="生产订单"></mt-field>
@@ -17,7 +17,7 @@
       <el-table-column prop="address" label="数量">
       </el-table-column>
     </el-table>
-    <x-button type="primary" action-type="button">入库</x-button>
+    <x-button style="margin-top: 10px" type="primary" action-type="button">入库</x-button>
   </div>
 
 
@@ -36,7 +36,8 @@
     data() {
       return {
         name: '',
-        password: ''
+        password: '',
+        tableData: [],
 
       }
     },
