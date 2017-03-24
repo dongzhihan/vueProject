@@ -1,6 +1,6 @@
 <template>
   <div>
-  <div style="width: 100%;height: 1.5rem;font-size:1rem;display: flex;justify-content: center;align-items: center "> 生产投入 </div>
+  <div style="width: 100%;height: 1.5rem;font-size:1rem;display: flex;justify-content: center;align-items: center "> 生产产出 </div>
     <group>
 
       <mt-field label="生产订单"></mt-field>
