@@ -12,15 +12,18 @@ import 'lib-flexible'
 import MintUI from 'mint-ui'
 import 'mint-ui/lib/style.css'
 import api from './js/api.js'
-
+import $ from 'jquery'
 console.log(api)
 Vue.use(ElementUI)
 Vue.use(VueRouter)
 Vue.use(MintUI)
 console.log(ElementUI)
-
+console.log($())
+ 
 FastClick.attach(document.body)
 
+Vue.prototype.$jquery = $
+    console.log(Vue.prototype.$jquery())
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */

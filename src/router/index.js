@@ -11,22 +11,51 @@ import allocation from '@/components/pages/allocation.vue'
 Vue.use(Router)
 
 export default new Router({
-  routes: [
-    {
+  routes: [{
       path: '/',
       name: 'login',
       component: login
     },
-    { path: '/index', name: 'index', component: index,
-      children: [
-           { path: '/index/storage', name: 'indexStorage', component: storage },
-           { path: '/index/productionInput', name: 'indexProductionInput', component: productionInput },
-           { path: '/index/productionOrder', name: 'indexProductionOrder', component: productionOrder },
-           { path: '/index/productionOutput', name: 'indexProductionOutput', component: productionOutput },
-           { path: '/index/finishedGoodsDelivery', name: 'indexFinishedGoodsDelivery', component: finishedGoodsDelivery },
-           { path: '/index/allocation', name: 'allocation', component: allocation }
-      ]
+    {
+      path: '/index',
+      name: 'index',
+      component: index
+
     },
-     { path: '/productionInput', name: '123', component: productionInput }
+    {
+      path: '/productionInput',
+      name: '123',
+      component: productionInput
+    },
+    {
+      path: '/index/storage',
+      name: 'indexStorage',
+      component: storage
+    },
+    {
+      path: '/index/productionInput',
+      name: 'indexProductionInput',
+      component: productionInput
+    },
+    {
+      path: '/index/productionOrder',
+      name: 'indexProductionOrder',
+      component: productionOrder
+    },
+    {
+      path: '/index/productionOutput',
+      name: 'indexProductionOutput',
+      component: productionOutput
+    },
+    {
+      path: '/index/finishedGoodsDelivery',
+      name: 'indexFinishedGoodsDelivery',
+      component: finishedGoodsDelivery
+    },
+    {
+      path: '/index/allocation',
+      name: 'allocation',
+      component: allocation
+    }
   ]
 })

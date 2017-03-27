@@ -1,7 +1,15 @@
 <template>
   <div>
-    <router-view></router-view>
-    <tabbar>
+ 
+ <div style="margin-top: 3rem">  </div>
+<x-button type="primary" @click.native="goTo('/index/productionOrder')" action-type="button">生产订单</x-button>
+<x-button type="primary" @click.native="goTo('/index/productionInput')" action-type="button">生产投入</x-button>
+<x-button type="primary" @click.native="goTo('/index/productionOutput')" action-type="button">生产产出</x-button>
+<x-button type="primary" @click.native="goTo('/index/storage')" action-type="button">采购入库</x-button>
+<x-button type="primary" @click.native="goTo('/index/finishedGoodsDelivery')" action-type="button">成品发货</x-button>
+<x-button type="primary" @click.native="goTo('/index/allocation')" action-type="button">调拨</x-button>
+ 
+<!--    <tabbar>
       <tabbar-item link="/index/allocation">
 
         <span slot="label">调拨</span>
@@ -14,10 +22,10 @@
 
         <span slot="label">成品发货</span>
       </tabbar-item>
-      <tabbar-item link="/index/productionInput">
+      <tabbar-item link="/index/productionOrder">
 
         <span slot="label">生产订单</span>
-      </tabbar-item>
+      </tabbar-item>-->
 <!--      <tabbar-item link="/index/productionOutput">
 
         <span slot="label">生产投入</span>
@@ -26,7 +34,7 @@
 
         <span slot="label">生产产出</span>
       </tabbar-item>-->
-    </tabbar>
+ <!--   </tabbar>-->
 <!--    <mt-tabbar v-model="selected">
   <mt-tab-item @click.native="goTo('/index/allocation')" id="tab1">
     
@@ -63,7 +71,8 @@
 <script>
   import {
     Tabbar,
-    TabbarItem
+    TabbarItem,
+    XButton
   } from 'vux'
   export default {
     data() {
@@ -73,7 +82,8 @@
     },
     components: {
       Tabbar,
-      TabbarItem
+      TabbarItem,
+      XButton
     },
     methods: {
       goTo(path)
