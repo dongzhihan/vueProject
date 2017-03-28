@@ -8,6 +8,7 @@ import productionOrder from '@/components/pages/productionOrder.vue'
 import productionOutput from '@/components/pages/productionOutput.vue'
 import finishedGoodsDelivery from '@/components/pages/finishedGoodsDelivery.vue'
 import allocation from '@/components/pages/allocation.vue'
+import seleter from '@/components/pages/seleter.vue'
 Vue.use(Router)
 
 export default new Router({
@@ -56,6 +57,12 @@ export default new Router({
       path: '/index/allocation',
       name: 'allocation',
       component: allocation
+    }
+    ,
+    {
+      path: '/index/seleter',
+      name: 'allocation',
+      component: seleter
     }
   ]
 })
