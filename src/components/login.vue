@@ -14,6 +14,7 @@
 
 </style>
 <script>
+  import api from '../js/api.js'
   import {
     Group,
     XInput,
@@ -35,6 +36,13 @@
     },
     methods: {
       loginClick() {
+        let data = {
+          username: this.name,
+          password: this.password
+        }
+        /*        this.$http.post(api.login, data, api.config).then(data => {
+               if(data.data.Errcode==1)this.$router.push('/index')
+                })*/
         this.$router.push('/index')
       }
     }

@@ -2,6 +2,7 @@
   <div>
     <div style="width: 100%;height: 1.5rem;font-size:1rem;display: flex;justify-content: center;align-items: center "> 生产投入 </div>
     <group>
+      <mt-field label="生产订单"></mt-field>
       <mt-field label="二维码"></mt-field>
       <mt-field label="投入数"></mt-field>
       <mt-field label="已投入数"></mt-field>

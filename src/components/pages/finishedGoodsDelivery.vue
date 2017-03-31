@@ -2,21 +2,16 @@
   <div>
     <div style="width: 100%;height: 1.5rem;font-size:1rem;display: flex;justify-content: center;align-items: center "> 成品发货 </div>
     <group>
-      <mt-field label="出货时间"></mt-field>
-      <mt-field label="出货地"></mt-field>
-      <mt-field label="件号"></mt-field>
-      <mt-field label="数量"></mt-field>
-
+      <mt-field v-model="shipno" @keyup.enter.native="GetShipPlan()" label="出货单号"></mt-field>
     </group>
-    <el-table :data="tableData" style="width: 100%">
-      <el-table-column prop="date" label="序号">
+    <el-table :data="Detial" style="width: 100%">
+      <el-table-column prop="SerialNum" label="序号">
       </el-table-column>
-      <el-table-column prop="name" label="件号/规格">
+      <el-table-column prop="MaterialNo" label="件号/规格">
       </el-table-column>
-      <el-table-column width="50" prop="address" label="件名">
+      <el-table-column width="50" prop="MaterialName" label="件名">
       </el-table-column>
-
-      <el-table-column width="50" prop="address" label="数量">
+      <el-table-column width="50" prop="ShipQty" label="数量">
       </el-table-column>
     </el-table>
 
@@ -29,9 +24,7 @@
 
 </style>
 <script>
-  import {
-    Field
-  } from 'mint-ui';
+  import api from '../../js/api.js'
   import {
     Group,
     XInput,
@@ -40,17 +33,32 @@
   export default {
     data() {
       return {
-        name: '',
-        password: '',
-        tableData: [],
+        shipno: '', //出货单号
+        Detial: [],
 
       }
     },
+    methods: {
+      //出货计划
+      GetShipPlan() {
+        let data = {
+          shipno: this.shipno
+        }
+        this.$http.post(api.GetShipPlan, data, api.config).then((data) => {
+          if (data.data.Errcode != 0) {
+            let scouse = data.data;
+            this.Detial = scouse.Detial;
+
+          }
+        })
+      },
+      
+    },
+
     components: {
       Group,
       XInput,
-      XButton,
-      Field
+      XButton
     }
   }
 
