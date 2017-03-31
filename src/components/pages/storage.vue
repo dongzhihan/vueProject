@@ -29,6 +29,7 @@
 
 </style>
 <script>
+ 
   import {
     Group,
     XInput,
@@ -45,7 +46,7 @@
     components: {
       Group,
       XInput,
-      XButton
+      XButton 
     }
   }
 

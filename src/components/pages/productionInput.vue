@@ -18,11 +18,12 @@
 
 </style>
 <script>
+ 
   import {
     Group,
     XInput,
     XButton
-  } from 'vux'
+  } from 'vux';
   export default {
     data() {
       return {
@@ -40,7 +41,7 @@
     components: {
       Group,
       XInput,
-      XButton
+      XButton 
     }
   }
 

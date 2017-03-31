@@ -9,22 +9,25 @@ import ElementUI from 'element-ui'
 import router from './router/index.js'
 import 'element-ui/lib/theme-default/index.css'
 import 'lib-flexible'
-import MintUI from 'mint-ui'
 import 'mint-ui/lib/style.css'
 import api from './js/api.js'
+import axios from 'axios';
 import $ from 'jquery'
+import {
+  Field
+} from 'mint-ui';
 console.log(api)
 Vue.use(ElementUI)
 Vue.use(VueRouter)
-Vue.use(MintUI)
-console.log(ElementUI)
-console.log($())
- 
+Vue.prototype.$http = axios
 FastClick.attach(document.body)
-
+/////注册
+Vue.component(Field.name, Field);
+//////////////////////
 Vue.prototype.$jquery = $
-    console.log(Vue.prototype.$jquery())
+console.log(Vue.prototype.$jquery())
 Vue.config.productionTip = false
+
 
 /* eslint-disable no-new */
 new Vue({

@@ -38,7 +38,7 @@
         name: '',
         password: '',
         tableData: [],
-
+  
       }
     },
     components: {

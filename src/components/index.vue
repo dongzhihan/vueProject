@@ -1,8 +1,8 @@
 <template>
   <div>
-  <div style="width: 100%;height: 1.5rem;font-size:1rem;display: flex;justify-content: center;align-items: center "> 主菜单 </div>
+    <div style="width: 100%;height: 1.5rem;font-size:1rem;display: flex;justify-content: center;align-items: center "> 主菜单 </div>
     <div style="margin-top: 1rem"> </div>
-     <x-button type="primary" @click.native="goTo('/index/seleter')" action-type="button">线体设定</x-button>
+    <x-button type="primary" @click.native="goTo('/index/seleter')" action-type="button">线体设定</x-button>
     <x-button type="primary" @click.native="goTo('/index/productionOrder')" action-type="button">生产订单</x-button>
     <x-button type="primary" @click.native="goTo('/index/productionInput')" action-type="button">生产投入</x-button>
     <x-button type="primary" @click.native="goTo('/index/productionOutput')" action-type="button">生产产出</x-button>
@@ -70,6 +70,7 @@
 
 </style>
 <script>
+import api from '../js/api.js'
   import {
     Tabbar,
     TabbarItem,
@@ -88,7 +89,10 @@
     },
     methods: {
       goTo(path) {
-        this.$router.push(path)
+        this.$router.push(path);
+        this.$http.get('http://api.jirengu.com/weather.php?callback=getWeather', api.apiConfig()).then(function (data) {
+          console.log(data)
+        })
       }
     }
   }

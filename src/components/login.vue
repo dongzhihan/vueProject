@@ -19,7 +19,7 @@
     XInput,
     XButton
   } from 'vux'
-  
+
   export default {
     data() {
       return {
@@ -32,11 +32,9 @@
       Group,
       XInput,
       XButton
-    }
-    ,
+    },
     methods: {
-      loginClick()
-      {
+      loginClick() {
         this.$router.push('/index')
       }
     }

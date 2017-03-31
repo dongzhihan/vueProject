@@ -24,11 +24,6 @@ export default new Router({
 
     },
     {
-      path: '/productionInput',
-      name: '123',
-      component: productionInput
-    },
-    {
       path: '/index/storage',
       name: 'indexStorage',
       component: storage

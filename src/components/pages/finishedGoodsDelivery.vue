@@ -1,6 +1,6 @@
 <template>
   <div>
-   <div style="width: 100%;height: 1.5rem;font-size:1rem;display: flex;justify-content: center;align-items: center "> 成品发货 </div>
+    <div style="width: 100%;height: 1.5rem;font-size:1rem;display: flex;justify-content: center;align-items: center "> 成品发货 </div>
     <group>
       <mt-field label="出货时间"></mt-field>
       <mt-field label="出货地"></mt-field>
@@ -30,10 +30,12 @@
 </style>
 <script>
   import {
+    Field
+  } from 'mint-ui';
+  import {
     Group,
     XInput,
-    XButton,
-    XHeader
+    XButton
   } from 'vux'
   export default {
     data() {
@@ -48,7 +50,7 @@
       Group,
       XInput,
       XButton,
-      XHeader
+      Field
     }
   }
 
