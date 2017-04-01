@@ -14,14 +14,9 @@
       <el-table-column width="50" prop="ShipQty" label="数量">
       </el-table-column>
     </el-table>
-
   </div>
-
-
 </template>
 <style>
-
-
 </style>
 <script>
   import api from '../../js/api.js'

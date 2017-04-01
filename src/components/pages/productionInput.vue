@@ -11,12 +11,8 @@
     </group>
     <x-button style="margin-top: 10px" type="primary" action-type="button">提交</x-button>
   </div>
-
-
 </template>
 <style>
-
-
 </style>
 <script>
  
