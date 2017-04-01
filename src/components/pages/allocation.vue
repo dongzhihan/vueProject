@@ -14,7 +14,7 @@
       <mt-field v-model="ToWarehouse" :readonly=true label="目标仓库"></mt-field>
       <mt-field v-model="PackageNum" :readonly=true label="数量"></mt-field>
     </group>
-    <x-button style="margin-top: 10px" type="primary" action-type="button">提交</x-button>
+    <x-button style="margin-top: 10px" type="primary" @click.native="StockTransfer()" action-type="button">提交</x-button>
   </div>
 </template>
 <style>
@@ -79,7 +79,7 @@
               iconClass: 'icon icon-success'
             });
             //成功清空
-            this.qrcode='';
+            this.qrcode = '';
             this.ProductionName = '';
             this.ProductionNo = '';
             this.FromWarehouse = '';

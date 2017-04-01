@@ -90,7 +90,6 @@
       goTo(path) {
         this.$router.push(path);
         this.$http.get('http://api.jirengu.com/weather.php?callback=getWeather', api.apiConfig()).then(function (data) {
-          console.log(data)
         })
       }
     }
