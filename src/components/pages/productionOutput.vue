@@ -29,7 +29,7 @@
 
 </style>
 <script>
-    import {
+  import {
     Toast
   } from 'mint-ui';
   import {
