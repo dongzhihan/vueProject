@@ -28,6 +28,9 @@
 
 </style>
 <script>
+    import {
+    Toast
+  } from 'mint-ui';
   import api from '../../js/api.js'
   import {
     Group,
@@ -52,13 +55,12 @@
           recevingno: this.recevingno
         }
         this.$http.post(api.GetRecevingInfo, data, api.config).then((data) => {
-          if(data.data.Errcode!=0)
-          {
-            let scouse=data.data
-          this.ListRecDetail = scouse.ListRecDetail;
-          this.PoNo = scouse.PoNo;
-          this.CardName = scouse.CardName;
-          this.cardno = scouse.cardno;
+          if (data.data.Errcode != 0) {
+            let scouse = data.data
+            this.ListRecDetail = scouse.ListRecDetail;
+            this.PoNo = scouse.PoNo;
+            this.CardName = scouse.CardName;
+            this.cardno = scouse.cardno;
           }
         })
       },
@@ -68,14 +70,24 @@
           ListRecDetail: this.ListRecDetail,
           PoNo: this.PoNo,
           CardName: this.CardName,
-          cardno: this.cardno
+          CardNo: this.cardno,
+          loginname: sessionStorage["userName"],
+          delivery: this.recevingno
         }
         this.$http.post(api.CreatePoGoodsReceipt, data, api.config).then(
           (data) => {
-            this.ListRecDetail = [];
-            this.PoNo = '';
-            this.CardName = '';
-            this.cardno = '';
+            if (data.data.Errcode != 0) {
+              Toast({
+                message: "创建采购订单入库成功",
+                iconClass: 'icon icon-success'
+              });
+              this.ListRecDetail = [];
+              this.PoNo = '';
+              this.CardName = '';
+              this.cardno = '';
+              this.recevingno = '';
+            }
+
           }
         )
       }

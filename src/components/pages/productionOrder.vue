@@ -11,7 +11,7 @@
       <mt-field v-model="MaterialNo" label="件号"></mt-field>
       <mt-field v-model="WorkCenter" label="加工中心"></mt-field>
     </group>
-    <x-button style="margin-top: 10px" type="primary" action-type="button">提交</x-button>
+    <x-button style="margin-top: 10px" @click.native="CreateProductionOrder()" type="primary" action-type="button">提交</x-button>
   </div>
 </template>
 <style>
@@ -19,9 +19,9 @@
 
 </style>
 <script>
-   import {
-   Toast
- } from 'mint-ui';
+  import {
+    Toast
+  } from 'mint-ui';
   import api from '../../js/api.js'
   import {
     Group,
@@ -70,27 +70,29 @@
         this.$http.post(api.GetProductionDashboardInfo, data, api.config).then((data) => {
           if (data.data.Errcode != 0) {
             let scouse = data.data
-            this.Qty = scouse.Qty;
+            this.Qty = scouse.PlanQty;
             this.MaterialName = scouse.MaterialName;
             this.MaterialNo = scouse.MaterialNo;
             this.WorkCenter = scouse.WorkCenter;
           }
         })
       },
-      //
+      //生产订单提交
       CreateProductionOrder() {
         let data = {
           itemCode: this.MaterialNo,
           quantity: this.Qty,
+          duedate:this.dueDate,
+          workcenter:this.workcenter,
           loginname: sessionStorage["userName"]
         }
         this.$http.post(api.CreateProductionOrder, data, api.config).then((data) => {
-       if (data.data.Errcode != 0) {
+          if (data.data.Errcode != 0) {
             Toast({
-              message: "提交成功",
+              message: "创建生产订单成功",
               iconClass: 'icon icon-success'
             });
-       }
+          }
         })
       }
     },

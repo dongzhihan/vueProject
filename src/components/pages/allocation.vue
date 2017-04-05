@@ -5,7 +5,7 @@
     <group>
 
       <!--  <input type="" name="" @focus="test()" value="">-->
-      <mt-field v-model="qrcode" label="二维码" @focus.native="GetEngDashboardInfo()" placeholder="请扫描二维码"></mt-field>
+      <mt-field v-model="qrcode" label="二维码" @keyup.enter.native="GetEngDashboardInfo()" placeholder="请扫描二维码"></mt-field>
       <mt-field v-model="ProductionName" :readonly=true label="件名"></mt-field>
       <mt-field v-model="ProductionNo" :readonly=true label="件号"></mt-field>
       <mt-field v-model="MtlSiteNo" :readonly=true label="原储位"></mt-field>
@@ -66,11 +66,14 @@
       //调拨提交
       StockTransfer() {
         let data = {
-          itemcode: this.ProductionNo,
-          itemdescription: this.ProductionName,
-          quantity: this.quantity,
-          fromwarehouse: this.FromWarehouse,
-          towarehouse: this.ToWarehouse
+          itemcode: this.ProductionNo, //件号
+          itemdescription: this.ProductionName, //件名
+          quantity: this.quantity, //数量
+          fromwarehouse: this.FromWarehouse, //原仓库
+          towarehouse: this.ToWarehouse, //目标仓库
+          fromsite: this.MtlSiteNo, //原储位
+          tosite: this.EngSiteNo, //目标储位
+          loginname: sessionStorage["userName"] //名字
         }
         this.$http.post(api.GetEngDashboardInfo, data, api.config).then((data => {
           if (data.data.Errcode != 0) {
@@ -87,7 +90,6 @@
             this.ToWarehouse = '';
             this.PackageNum = '';
           }
-
         }))
       },
 
