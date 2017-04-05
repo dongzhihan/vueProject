@@ -12,11 +12,11 @@
       <mt-field v-model="ProdOutQty" label="产出数量"></mt-field>
     </group>
     <el-table :data="tableData" style="width: 100%">
-      <el-table-column prop="date" label="序号">
+      <el-table-column prop="Serial" label="序号">
       </el-table-column>
-      <el-table-column prop="name" label="产出时间">
+      <el-table-column prop="CreateDate" label="产出时间">
       </el-table-column>
-      <el-table-column prop="address" label="数量">
+      <el-table-column prop="Qty" label="数量">
       </el-table-column>
     </el-table>
     <x-button style="margin-top: 10px" @click.native="MoOutput()" type="primary" action-type="button">入库</x-button>
