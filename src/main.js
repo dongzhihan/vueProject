@@ -19,14 +19,14 @@ import {
 console.log(api)
 Vue.use(ElementUI)
 Vue.use(VueRouter)
+//axios  http请求类
 Vue.prototype.$http = axios
 FastClick.attach(document.body)
 /////注册
 Vue.component(Field.name, Field);
-//////////////////////
-Vue.prototype.$jquery = $
-console.log(Vue.prototype.$jquery())
-Vue.config.productionTip = false
+//////////////////////jquery 引入
+Vue.prototype.$jquery = $;
+Vue.config.productionTip = false;
 
 
 /* eslint-disable no-new */

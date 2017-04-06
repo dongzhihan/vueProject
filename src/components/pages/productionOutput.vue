@@ -3,8 +3,8 @@
     <div style="width: 100%;height: 1.5rem;font-size:1rem;display: flex;justify-content: center;align-items: center "> 生产产出 </div>
     <group>
 
-      <mt-field v-model="mono" label="生产订单"></mt-field>
-      <mt-field v-model="productionqrcode" @keyup.enter.native="GetMoOnput()" label="二维码"></mt-field>
+      <mt-field v-model="mono" @keyup.enter.native="setFocus()" label="生产订单"></mt-field>
+      <mt-field v-model="productionqrcode" id="productionqrcodeId" @keyup.enter.native="GetMoOnput()" label="二维码"></mt-field>
       <mt-field v-model="MaterialNo" label="件号"></mt-field>
       <mt-field v-model="MaterialName" label="件名"></mt-field>
       <mt-field v-model="PlanedQty" label="订单数量"></mt-field>
@@ -51,6 +51,10 @@
       }
     },
     methods: {
+      //测试设置focus
+      setFocus() {
+        this.$jquery("#productionqrcodeId").find("input").focus()
+      },
       //产出二维码
       GetMoOnput() {
         let data = {
@@ -70,7 +74,7 @@
           }
         })
       },
-    //产出提交
+      //产出提交
       MoOutput() {
         let data = {
           mono: this.mono,

@@ -11,7 +11,7 @@
       <mt-field v-model="LineList" label="车间"></mt-field>
       <mt-field v-model="Line" label="线别"></mt-field>
     </group>
-    <x-button style="margin-top: 10px" @click="MoInput()" type="primary" action-type="button">提交</x-button>
+    <x-button style="margin-top: 10px" @click.native="MoInput()" type="primary" action-type="button">提交</x-button>
   </div>
 </template>
 <style>
@@ -51,9 +51,9 @@
             let scouse = data.data
             this.ItemCode = scouse.ItemCode
             this.ItemName = scouse.InputQty
-            this.TotalInputQty = scouse.TotalInputQty,
-              this.LineList = scouse.LineList,
-              this.Line = scouse.Line
+            this.TotalInputQty = scouse.TotalInputQty
+            this.LineList = scouse.LineList
+            this.Line = scouse.Line
           }
         })
 
@@ -68,13 +68,13 @@
         }
         this.$http.post(api.MoInput, data, api.config).then((data) => {
           if (data.data.Errcode != 0) {
-            this.mono = '',
-              this.ItemCode = '', //件号
-              this.ItemName = '', //件名
-              this.InputQty = '', //投入量
-              this.TotalInputQty = '', //已投入量
-              this.LineList = '', //车间
-              this.Line = '' //线别
+            this.mono = ''
+            this.ItemCode = '' //件号
+            this.ItemName = '' //件名
+            this.InputQty = '' //投入量
+            this.TotalInputQty = '' //已投入量
+            this.LineList = '' //车间
+            this.Line = '' //线别
             Toast({
               message: "提交成功",
               iconClass: 'icon icon-success'
