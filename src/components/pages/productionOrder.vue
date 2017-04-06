@@ -82,8 +82,8 @@
         let data = {
           itemCode: this.MaterialNo,
           quantity: this.Qty,
-          duedate:this.dueDate,
-          workcenter:this.workcenter,
+          duedate: this.dueDate,
+          workcenter: this.workcenter,
           loginname: sessionStorage["userName"]
         }
         this.$http.post(api.CreateProductionOrder, data, api.config).then((data) => {

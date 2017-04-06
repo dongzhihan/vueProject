@@ -51,6 +51,7 @@
       }
     },
     methods: {
+      //产出二维码
       GetMoOnput() {
         let data = {
           mono: this.mono,
@@ -69,6 +70,7 @@
           }
         })
       },
+    //产出提交
       MoOutput() {
         let data = {
           mono: this.mono,
@@ -81,6 +83,7 @@
               message: "创建生产订单入库成功",
               iconClass: 'icon icon-success'
             });
+            //初始化
             this.mono = '' //生产订单
             this.productionqrcode = '' //生产订单二维码
             this.MaterialNo = '' //件号

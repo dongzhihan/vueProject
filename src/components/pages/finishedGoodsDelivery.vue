@@ -37,7 +37,6 @@
       return {
         shipno: '', //出货单号
         ListShipPlan: [],
-
       }
     },
     methods: {
@@ -53,6 +52,7 @@
           }
         })
       },
+      //提交出货
       ship() {
         let data = {
           shipno: this.shipno,
@@ -60,8 +60,8 @@
         }
         this.$http.post(api.Ship, data, api.config).then((data) => {
           if (data.data.Errcode != 0) {
-            shipno= '' //出货单号
-            ListShipPlan= []
+            shipno = '' //出货单号
+            ListShipPlan = []
             Toast({
               message: "提交成功",
               iconClass: 'icon icon-success'
