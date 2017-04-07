@@ -27,8 +27,6 @@ Vue.component(Field.name, Field);
 //////////////////////jquery 引入
 Vue.prototype.$jquery = $;
 Vue.config.productionTip = false;
-
-
 /* eslint-disable no-new */
 new Vue({
   router,

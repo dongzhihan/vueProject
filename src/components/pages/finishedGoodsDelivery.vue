@@ -19,6 +19,8 @@
   </div>
 </template>
 <style>
+
+
 </style>
 <script>
   import {
@@ -59,7 +61,7 @@
         this.$http.post(api.Ship, data, api.config).then((data) => {
           if (data.data.Errcode != 0) {
             shipno = '' //出货单号
-            ListShipPlan = []
+            this.ListShipPlan = []
             Toast({
               message: "提交成功",
               iconClass: 'icon icon-success'

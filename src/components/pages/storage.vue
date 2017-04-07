@@ -87,7 +87,6 @@
               this.cardno = '';
               this.recevingno = '';
             }
-
           }
         )
       }
