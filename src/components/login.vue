@@ -26,7 +26,6 @@
       return {
         name: '',
         password: ''
-
       }
     },
     components: {
@@ -40,12 +39,14 @@
           username: this.name,
           password: this.password
         }
-        sessionStorage["userName"]=this.name
-        /*        this.$http.post(api.login, data, api.config).then(data => {
-               if(data.data.Errcode==1)this.$router.push('/index')
-                })*/
-        this.$router.push('/index')
+        this.$http.post(api.login, data, api.config).then(data => {
+          if (data.data.Errcode == 0) {
+            sessionStorage["userName"] = this.name;
+            this.$router.push('/index');
+          }
+        })
       }
     }
   }
+
 </script>

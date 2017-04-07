@@ -19,8 +19,6 @@
   </div>
 </template>
 <style>
-
-
 </style>
 <script>
   import {
@@ -68,7 +66,6 @@
             });
           }
         })
-
       }
     },
     components: {

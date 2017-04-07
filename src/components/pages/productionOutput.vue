@@ -61,7 +61,6 @@
           mono: this.mono,
           productionqrcode: this.productionqrcode
         }
-
         this.$http.post(api.GetMoOnput, data, api.config).then((data) => {
           if (data.data.Errcode != 0) {
             let scouse = data.data;
