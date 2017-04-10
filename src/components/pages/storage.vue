@@ -8,11 +8,11 @@
       <mt-field v-model="CardName" label="厂商"></mt-field>
     </group>
     <el-table :data="ListRecDetail" style="width: 100%">
-      <el-table-column width="50" prop="Serial" label="序号">
+      <el-table-column width="60" prop="Serial" label="序号">
       </el-table-column>
-      <el-table-column prop="Itemcode" label="件号/规格">
+      <el-table-column  prop="ItemCode" label="件号/规格">
       </el-table-column>
-      <el-table-column prop="Itemname" label="件名">
+      <el-table-column  prop="ItemName" label="件名">
       </el-table-column>
       <el-table-column label="交货量">
         <template scope="scope">
@@ -54,27 +54,27 @@
         let data = {
           recevingno: this.recevingno
         }
-        this.$http.post(api.GetRecevingInfo, data, api.config).then((data) => {
+        this.$http.post(api.GetRecevingInfo, data, api.apiConfig()).then((data) => {
           if (data.data.Errcode != 0) {
             let scouse = data.data
             this.ListRecDetail = scouse.ListRecDetail;
             this.PoNo = scouse.PoNo;
             this.CardName = scouse.CardName;
-            this.cardno = scouse.cardno;
+            this.cardno = scouse.CardNo;
           }
         })
       },
       //入库提交
       CreatePoGoodsReceipt() {
         let data = {
-          ListRecDetail: this.ListRecDetail,
-          PoNo: this.PoNo,
-          CardName: this.CardName,
-          CardNo: this.cardno,
+          listreceive: this.ListRecDetail,
+          pono: this.PoNo,
+          cardname: this.CardName,
+          cardcode: this.cardno,
           loginname: sessionStorage["userName"],
           delivery: this.recevingno
         }
-        this.$http.post(api.CreatePoGoodsReceipt, data, api.config).then(
+        this.$http.post(api.CreatePoGoodsReceipt, data, api.apiConfig()).then(
           (data) => {
             if (data.data.Errcode != 0) {
               Toast({

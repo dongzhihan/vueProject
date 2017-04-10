@@ -11,8 +11,8 @@
       <mt-field v-model="StorageQty" label="已入库数量"></mt-field>
       <mt-field v-model="ProdOutQty" label="产出数量"></mt-field>
     </group>
-    <el-table :data="tableData" style="width: 100%">
-      <el-table-column prop="Serial" label="序号">
+    <el-table :data="ListProductionOutDetail" style="width: 100%">
+      <el-table-column width="60" prop="Serial" label="序号">
       </el-table-column>
       <el-table-column prop="CreateDate" label="产出时间">
       </el-table-column>
@@ -29,6 +29,7 @@
 
 </style>
 <script>
+    import api from '../../js/api.js'
   import {
     Toast
   } from 'mint-ui';
@@ -58,11 +59,12 @@
       //产出二维码
       GetMoOnput() {
         let data = {
+          loginname:sessionStorage["userName"],
           mono: this.mono,
           productionqrcode: this.productionqrcode
         }
-        this.$http.post(api.GetMoOnput, data, api.config).then((data) => {
-          if (data.data.Errcode != 0) {
+        this.$http.post(api.GetMoOutput, data, api.apiConfig()).then((data) => {
+          if (data.data.ErrCode == 0) {
             let scouse = data.data;
             this.MaterialNo = scouse.MaterialNo;
             this.MaterialName = scouse.MaterialName;
@@ -77,11 +79,11 @@
       MoOutput() {
         let data = {
           mono: this.mono,
-          storageqty: this.StorageQty,
+          storageqty: this.ProdOutQty,
           loginname: sessionStorage["userName"]
         }
-        this.$http.post(api.MoOutput, data, api.config).then((data) => {
-          if (data.data.Errcode != 0) {
+        this.$http.post(api.MoOutput, data, api.apiConfig()).then((data) => {
+          if (data.data.ErrCode == 0) {
             Toast({
               message: "创建生产订单入库成功",
               iconClass: 'icon icon-success'

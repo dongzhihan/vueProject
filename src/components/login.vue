@@ -1,10 +1,10 @@
 <template>
   <div>
 
-    <group>
-      <x-input title="用户名：" v-model="name"></x-input>
+    <group style="margin-top: 3rem">
+      <x-input title="用户名：" v-model="name"   ></x-input>
       <x-input title="密 码：" v-model="password"></x-input>
-      <x-button type="primary" @click.native='loginClick()' action-type="button">登陆</x-button>
+      <x-button type="primary" @click.native='loginClick()' style="margin-top: 0.3rem" action-type="button">登陆</x-button>
     </group>
 
   </div>
@@ -39,8 +39,9 @@
           username: this.name,
           password: this.password
         }
-        this.$http.post(api.login, data, api.config).then(data => {
-          if (data.data.Errcode == 0) {
+    
+        this.$http.post(api.login, data, api.apiConfig()).then(data => {
+          if (data.data.ErrCode == 0) {  
             sessionStorage["userName"] = this.name;
             this.$router.push('/index');
           }

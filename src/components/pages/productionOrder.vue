@@ -67,7 +67,7 @@
         let data = {
           qrcode: this.qrcode
         }
-        this.$http.post(api.GetProductionDashboardInfo, data, api.config).then((data) => {
+        this.$http.post(api.GetProductionDashboardInfo, data, api.apiConfig()).then((data) => {
           if (data.data.Errcode != 0) {
             let scouse = data.data
             this.Qty = scouse.PlanQty;
@@ -83,11 +83,16 @@
           itemCode: this.MaterialNo,
           quantity: this.Qty,
           duedate: this.dueDate,
-          workcenter: this.workcenter,
+          workcenter: this.WorkCenter,
           loginname: sessionStorage["userName"]
         }
-        this.$http.post(api.CreateProductionOrder, data, api.config).then((data) => {
-          if (data.data.Errcode != 0) {
+        this.$http.post(api.CreateProductionOrder, data, api.apiConfig()).then((data) => {
+          if (data.data.Errcode == 0) {
+            this.qrcode= '', //二维码
+            this.Qty= '', //计划数量
+            this.MaterialName= '', //件名
+            this.MaterialNo='', //件号
+            this.WorkCenter='', //加工中心
             Toast({
               message: "创建生产订单成功",
               iconClass: 'icon icon-success'

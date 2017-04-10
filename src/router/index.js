@@ -53,11 +53,6 @@ export default new Router({
       name: 'allocation',
       component: allocation
     }
-    ,
-    {
-      path: '/index/seleter',
-      name: 'allocation',
-      component: seleter
-    }
+  
   ]
 })

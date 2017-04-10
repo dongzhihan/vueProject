@@ -12,7 +12,8 @@ import 'lib-flexible'
 import 'mint-ui/lib/style.css'
 import api from './js/api.js'
 import axios from 'axios';
-import $ from 'jquery'
+import $ from 'jquery';
+require('babel-polyfill')
 import {
   Field
 } from 'mint-ui';

@@ -43,7 +43,6 @@
         EngSiteNo: '', //调拨储位
         ToWarehouse: '', //目标仓库
         PackageNum: '', //数量
-
       }
     },
     methods: {
@@ -51,10 +50,11 @@
         let data = {
           qrcode: this.qrcode
         };
-        this.$http.post(api.GetEngDashboardInfo, data, api.config).then((data) => {
-          if (data.data.Errcode != 0) {
+        this.$http.post(api.GetEngDashboardInfo, data, api.apiConfig()).then((data) => {
+          if (data.data.ErrCode == 0) {
             let scouse = data.data
             this.ProductionName = scouse.ProductionName;
+            this.MtlSiteNo=scouse.MtlSiteNo;
             this.ProductionNo = scouse.ProductionNo;
             this.FromWarehouse = scouse.FromWarehouse;
             this.EngSiteNo = scouse.EngSiteNo;
@@ -68,15 +68,15 @@
         let data = {
           itemcode: this.ProductionNo, //件号
           itemdescription: this.ProductionName, //件名
-          quantity: this.quantity, //数量
+          quantity: this.PackageNum, //数量
           fromwarehouse: this.FromWarehouse, //原仓库
           towarehouse: this.ToWarehouse, //目标仓库
           fromsite: this.MtlSiteNo, //原储位
           tosite: this.EngSiteNo, //目标储位
           loginname: sessionStorage["userName"] //名字
         }
-        this.$http.post(api.GetEngDashboardInfo, data, api.config).then((data => {
-          if (data.data.Errcode != 0) {
+        this.$http.post(api.StockTransfer, data, api.apiConfig()).then((data => {
+          if (data.data.ErrCode == 0) {
             Toast({
               message: "提交成功",
               iconClass: 'icon icon-success'
