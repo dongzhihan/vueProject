@@ -40,7 +40,6 @@
   export default {
     data() {
       return {
-
         recevingno: '', //验收单号 
         PoNo: '', //采购订单 
         CardName: '', //供应商名称
@@ -55,7 +54,7 @@
           recevingno: this.recevingno
         }
         this.$http.post(api.GetRecevingInfo, data, api.apiConfig()).then((data) => {
-          if (data.data.Errcode != 0) {
+          if (data.data.ErrCode == 0) {
             let scouse = data.data
             this.ListRecDetail = scouse.ListRecDetail;
             this.PoNo = scouse.PoNo;
@@ -76,7 +75,7 @@
         }
         this.$http.post(api.CreatePoGoodsReceipt, data, api.apiConfig()).then(
           (data) => {
-            if (data.data.Errcode != 0) {
+            if (data.data.ErrCode == 0) {
               Toast({
                 message: "创建采购订单入库成功",
                 iconClass: 'icon icon-success'

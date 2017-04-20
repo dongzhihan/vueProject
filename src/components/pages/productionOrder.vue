@@ -68,7 +68,7 @@
           qrcode: this.qrcode
         }
         this.$http.post(api.GetProductionDashboardInfo, data, api.apiConfig()).then((data) => {
-          if (data.data.Errcode != 0) {
+          if (data.data.ErrCode == 0) {
             let scouse = data.data
             this.Qty = scouse.PlanQty;
             this.MaterialName = scouse.MaterialName;
@@ -87,7 +87,7 @@
           loginname: sessionStorage["userName"]
         }
         this.$http.post(api.CreateProductionOrder, data, api.apiConfig()).then((data) => {
-          if (data.data.Errcode == 0) {
+          if (data.data.ErrCode == 0) {
             this.qrcode= '', //二维码
             this.Qty= '', //计划数量
             this.MaterialName= '', //件名

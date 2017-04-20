@@ -50,7 +50,7 @@
           productionqrcode: this.productionqrcode
         }
         this.$http.post(api.GetMoInput, data,  api.apiConfig()).then((data) => {
-          if (data.data.Errcode == 0) {
+          if (data.data.ErrCode == 0) {
             let scouse = data.data
             this.InputQty=scouse.InputQty
             this.ItemCode = scouse.ItemCode
@@ -71,7 +71,7 @@
           loginname: sessionStorage["userName"]
         }
         this.$http.post(api.MoInput, data, api.apiConfig()).then((data) => {
-          if (data.data.Errcode == 0) {
+          if (data.data.ErrCode == 0) {
             this.productionqrcode=''
             this.mono = ''
             this.ItemCode = '' //件号
