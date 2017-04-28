@@ -19,7 +19,7 @@
 
 </style>
 <script>
-    import api from '../../js/api.js'
+  import api from '../../js/api.js'
   import {
     Toast
   } from 'mint-ui';
@@ -38,21 +38,21 @@
         TotalInputQty: '', //已投入量
         LineList: '', //车间
         Line: '', //线别
-        productionqrcode:''
+        productionqrcode: ''
       }
     },
     methods: {
       //投入二维码详情
       GetMoInput() {
         let data = {
-          loginname:sessionStorage["userName"],
+          loginname: sessionStorage["userName"],
           mono: this.mono,
           productionqrcode: this.productionqrcode
         }
-        this.$http.post(api.GetMoInput, data,  api.apiConfig()).then((data) => {
-          if (data.data.Errcode == 0) {
+        this.$http.post(api.GetMoInput, data, api.apiConfig()).then((data) => {
+          if (data.data.ErrCode == 0) {
             let scouse = data.data
-            this.InputQty=scouse.InputQty
+            this.InputQty = scouse.InputQty
             this.ItemCode = scouse.ItemCode
             this.ItemName = scouse.ItemName
             this.TotalInputQty = scouse.TotalInputQty
@@ -71,8 +71,8 @@
           loginname: sessionStorage["userName"]
         }
         this.$http.post(api.MoInput, data, api.apiConfig()).then((data) => {
-          if (data.data.Errcode == 0) {
-            this.productionqrcode=''
+          if (data.data.ErrCode == 0) {
+            this.productionqrcode = ''
             this.mono = ''
             this.ItemCode = '' //件号
             this.ItemName = '' //件名

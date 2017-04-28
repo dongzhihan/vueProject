@@ -1,9 +1,7 @@
 <template>
   <div>
-
     <div style="width: 100%;height: 1.5rem;font-size:1rem;display: flex;justify-content: center;align-items: center "> 调拨 </div>
     <group>
-
       <!--  <input type="" name="" @focus="test()" value="">-->
       <mt-field v-model="qrcode" label="二维码" @keyup.enter.native="GetEngDashboardInfo()" placeholder="请扫描二维码"></mt-field>
       <mt-field v-model="ProductionName" :readonly=true label="件名"></mt-field>
@@ -21,7 +19,6 @@
 
 
 </style>
-
 <script>
   import {
     Toast
@@ -54,7 +51,7 @@
           if (data.data.ErrCode == 0) {
             let scouse = data.data
             this.ProductionName = scouse.ProductionName;
-            this.MtlSiteNo=scouse.MtlSiteNo;
+            this.MtlSiteNo = scouse.MtlSiteNo;
             this.ProductionNo = scouse.ProductionNo;
             this.FromWarehouse = scouse.FromWarehouse;
             this.EngSiteNo = scouse.EngSiteNo;

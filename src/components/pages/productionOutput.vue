@@ -51,10 +51,13 @@
         ListProductionOutDetail: [] //详细信息
       }
     },
+    mounted () {
+        this.$jquery("#productionqrcodeId").find("input").focus()
+    },
     methods: {
       //测试设置focus
       setFocus() {
-        this.$jquery("#productionqrcodeId").find("input").focus()
+      //  this.$jquery("#productionqrcodeId").find("input").focus()
       },
       //产出二维码
       GetMoOnput() {
