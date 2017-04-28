@@ -49,7 +49,11 @@
           mono: this.mono,
           productionqrcode: this.productionqrcode
         }
+<<<<<<< HEAD
         this.$http.post(api.GetMoInput, data, api.apiConfig()).then((data) => {
+=======
+        this.$http.post(api.GetMoInput, data,  api.apiConfig()).then((data) => {
+>>>>>>> 2b95842135baa93c59b9aff3927c092f64fc4aaa
           if (data.data.ErrCode == 0) {
             let scouse = data.data
             this.InputQty = scouse.InputQty
@@ -72,7 +76,11 @@
         }
         this.$http.post(api.MoInput, data, api.apiConfig()).then((data) => {
           if (data.data.ErrCode == 0) {
+<<<<<<< HEAD
             this.productionqrcode = ''
+=======
+            this.productionqrcode=''
+>>>>>>> 2b95842135baa93c59b9aff3927c092f64fc4aaa
             this.mono = ''
             this.ItemCode = '' //件号
             this.ItemName = '' //件名

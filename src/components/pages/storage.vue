@@ -40,7 +40,6 @@
   export default {
     data() {
       return {
-
         recevingno: '', //验收单号 
         PoNo: '', //采购订单 
         CardName: '', //供应商名称

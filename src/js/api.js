@@ -5,7 +5,7 @@
  const api = {
    apiConfig() {
      return {
-       baseURL:"http://10.10.1.113:8001/",
+       baseURL:"http://192.168.0.120:8001/",
        timeout: 1000000,
        transformResponse: [function (data) {
          // 这里提前处理返回的数据
@@ -35,6 +35,8 @@
    GetRecevingInfo:"SAPB1.asmx/GetRecevingInfo", //入库
    CreatePoGoodsReceipt:"SAPB1.asmx/CreatePoGoodsReceipt", //入库提交
    GetMoInput:"PDA.asmx/GetMoInput", //投入详情
-   GetMoOutput:"PDA.asmx/GetMoOutput" //产出详情
+   GetMoOutput:"PDA.asmx/GetMoOutput", //产出详情
+   SingleOutput:"PDA.asmx/SingleOutput", //完检
+   GetSiteInfo:"PDA.asmx/GetSiteInfo"  //储位查询
  } ////////////api存放位置
  export default api;

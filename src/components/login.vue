@@ -3,7 +3,7 @@
 
     <group style="margin-top: 3rem">
       <x-input title="用户名：" v-model="name"   ></x-input>
-      <x-input title="密 码：" v-model="password"></x-input>
+      <x-input type="password" title="密 码：" v-model="password"></x-input>
       <x-button type="primary" @click.native='loginClick()' style="margin-top: 0.3rem" action-type="button">登陆</x-button>
     </group>
 
